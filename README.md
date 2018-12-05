@@ -2,7 +2,7 @@
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
-#### 归属控制节点：[M6](https://github.com/OS-Q/M6)
+#### 归属网络节点：[M6](https://github.com/OS-Q/M6)
 
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
 
@@ -10,15 +10,17 @@
 
 ## [平台描述](https://github.com/OS-Q/W24/wiki) 
 
-基于广域覆盖无线网络接入互联网
+基于短距无线网络接入互联网，主要包括wifi通信接入
 
 ### [共用资源](https://github.com/OS-Q/W24/wiki/) 
 
 #### software
 
+网络协议
 
 #### hardware
 
+天线相关
 
 ---
 
@@ -26,31 +28,31 @@
 
 ## [包含设备](https://github.com/OS-Q/M6/wiki/) 
 
-#### D162：[SI4432模块](https://github.com/OS-Q/D162)
+#### D162：[ESP设备](https://github.com/OS-Q/D162)
 
 
 
-#### D163：[CC1101模块](https://github.com/OS-Q/D163)
+#### D163：[RTL设备](https://github.com/OS-Q/D163)
 
 
 
-#### D164：[CC2541设备](https://github.com/OS-Q/D164)
+#### D164：[RDA设备](https://github.com/OS-Q/D164)
 
 
 
-#### D165：[CC1310设备](https://github.com/OS-Q/D165)
+#### D165：[NULL设备](https://github.com/OS-Q/D165)
 
 
 
-#### D166：[NRF51822设备](https://github.com/OS-Q/D166)
+#### D166：[NULL设备](https://github.com/OS-Q/D166)
 
 
 
-#### D167：[NRF52832设备](https://github.com/OS-Q/D167)
+#### D167：[NULL设备](https://github.com/OS-Q/D167)
 
 
 
-#### D168：[NRF52840设备](https://github.com/OS-Q/D168)
+#### D168：[NULL设备](https://github.com/OS-Q/D168)
 
 
 
@@ -60,13 +62,13 @@
 
 基于通信线缆连接的网络通信
 
-#### -> W24：[短距通信](https://github.com/OS-Q/W24)
+#### -> W24：[短距无线](https://github.com/OS-Q/W24)
 
-基于WiFi等短距无线通信连接
+基于WiFi等短距无线通信入网
 
 #### W25：[广域通信](https://github.com/OS-Q/W25)
 
-基于运营商网络的广域覆盖
+基于运营商网络的广域网络入网
 
 #### W26：[专网通信](https://github.com/OS-Q/W26)
 
@@ -77,5 +79,5 @@
 
 ###  [Q redefined the scope of Operation System](http://www.OS-Q.com)
 ###  qitas@qitas.cn
-###  2018-12-4
+###  2018-12-5
 
