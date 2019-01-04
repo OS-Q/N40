@@ -1,42 +1,34 @@
-﻿# W24：[短距通信](https://github.com/OS-Q/W24)
+﻿# W24：[扩展网关](https://github.com/OS-Q/W24)
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
-#### 归属网络节点：[M6](https://github.com/OS-Q/M6)
+#### 归属数据网关：[M6](https://github.com/OS-Q/M6)
 
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
 
----
-
 ## [平台描述](https://github.com/OS-Q/W24/wiki) 
 
-基于短距无线网络接入互联网，主要包括wifi通信接入
+扩展网关，根据具体的用途和场景定义功能和服务，主要用于承载各种自定义功能。
 
-### [共用资源](https://github.com/OS-Q/W24/wiki/) 
-
-#### software
-
-网络协议
-
-#### hardware
-
-天线相关
+### [资源](OS-Q/)
 
 ---
 
-边缘设备命名规则：体系 Q[1,4] > 节点 M[1,12] > 平台 W[1,52] > 设备 D[1,365]。
+- 边缘设备命名规则：体系 Q:[1,4] -> 节点 M:[1,12] -> 平台 W:[1,52] -> 设备 D:[1,365]
 
-## [包含设备](https://github.com/OS-Q/M6/wiki/) 
+- naming patterns：system Q[1,4] -> node M[1,12] -> platform W[1,52] -> device D[1,365]
 
-#### D162：[ESP设备](https://github.com/OS-Q/D162)
+## [包含设备](https://github.com/OS-Q/W24/wiki/) 
+
+#### D162：[定位网关](https://github.com/OS-Q/D162)
+
+作为定位信标，用于接收各种定位信号和反馈信息
+
+#### D163：[NULL设备](https://github.com/OS-Q/D163)
 
 
 
-#### D163：[RTL设备](https://github.com/OS-Q/D163)
-
-
-
-#### D164：[RDA设备](https://github.com/OS-Q/D164)
+#### D164：[NULL设备](https://github.com/OS-Q/D164)
 
 
 
@@ -55,29 +47,26 @@
 #### D168：[NULL设备](https://github.com/OS-Q/D168)
 
 
+## [同级平台](https://github.com/OS-Q/M6/wiki)
 
-## [同级平台](https://github.com/OS-Q/W25/wiki/index)
+#### W23：[实时网关](https://github.com/OS-Q/W23)
 
-#### W23：[有线通信](https://github.com/OS-Q/W23)
+用于守候低频数据上报，维护低频设备通信管道
 
-基于通信线缆连接的网络通信
+#### -> W24：[扩展网关](https://github.com/OS-Q/W24)
 
-#### -> W24：[短距无线](https://github.com/OS-Q/W24)
+用户自定义功能的网关，可以根据场景需求切换
 
-基于WiFi等短距无线通信入网
+#### W25：[安全网关](https://github.com/OS-Q/W25)
 
-#### W25：[广域通信](https://github.com/OS-Q/W25)
+用于实现对数据的加密，保证数据向上的私密性
 
-基于运营商网络的广域网络入网
+#### W26：[分发网关](https://github.com/OS-Q/W26)
 
-#### W26：[专网通信](https://github.com/OS-Q/W26)
-
-基于专用网络通信接入
-
+用于完成数据资源储备，保证通用数据及时下发
 
 ---
 
-###  [Q redefined the scope of Operation System](http://www.OS-Q.com)
-###  qitas@qitas.cn
-###  2018-12-5
-
+####  © qitas@qitas.cn
+###  [OS-Q redefined Operation System](http://www.OS-Q.com)
+####  @ 2019-1-4
