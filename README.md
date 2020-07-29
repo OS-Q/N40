@@ -8,6 +8,8 @@
 
 [Xmodem升级终端](https://github.com/OS-Q/W43)
 
+* [Xmodem protocol with CRC](https://web.mit.edu/6.115/www/amulet/xmodem.htm)
+
 ### [收录资源](https://github.com/OS-Q/)
 
 * [文档](docs/)
