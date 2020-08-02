@@ -5,8 +5,8 @@
 ****作者：Qitas
 ****版权：
 *******************************************************************************/
-#ifndef _BOOT_H_
-#define _BOOT_H_
+#ifndef __MENU_H
+#define __MENU_H
 
 #include "stm32f0xx_hal.h"
 #include "main.h"
@@ -28,3 +28,4 @@ extern void Boot(void);
 
 #endif
 
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/

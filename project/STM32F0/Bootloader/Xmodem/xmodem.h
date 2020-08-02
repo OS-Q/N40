@@ -50,3 +50,5 @@ uint16_t UpdateCRC16(uint16_t crc_in, uint8_t byte);
 void Serial_PutString(uint8_t *p_string);
 
 #endif
+
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/

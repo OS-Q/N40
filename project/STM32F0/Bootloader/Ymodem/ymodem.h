@@ -1,28 +1,10 @@
-/**
-  ******************************************************************************
-  * @file    IAP_Main/Inc/ymodem.h 
-  * @author  MCD Application Team
-  * @version 1.0.0
-  * @date    8-April-2015
-  * @brief   This file provides all the software function headers of the ymodem.c 
-  *          file.
-  ******************************************************************************
-  *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
-  ******************************************************************************
-  */ 
-
+/******************************************************************************
+****版本：1.0.0
+****平台：
+****日期：2020-07-29
+****作者：Qitas
+****版权：
+*******************************************************************************/
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __YMODEM_H_
 #define __YMODEM_H_
@@ -59,7 +41,7 @@ typedef enum
 #define PACKET_1K_SIZE          ((uint32_t)1024)
 
 /* /-------- Packet in IAP memory ------------------------------------------\
- * | 0      |  1    |  2     |  3   |  4      | ... | n+4     | n+5  | n+6  | 
+ * | 0      |  1    |  2     |  3   |  4      | ... | n+4     | n+5  | n+6  |
  * |------------------------------------------------------------------------|
  * | unused | start | number | !num | data[0] | ... | data[n] | crc0 | crc1 |
  * \------------------------------------------------------------------------/
@@ -90,4 +72,4 @@ COM_StatusTypeDef Ymodem_Transmit(uint8_t *p_buf, const uint8_t *p_file_name, ui
 
 #endif  /* __YMODEM_H_ */
 
-/*******************(C)COPYRIGHT STMicroelectronics ********END OF FILE********/
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/

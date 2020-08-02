@@ -62,4 +62,4 @@ uint32_t FLASH_If_WriteProtectionConfig(uint32_t modifier);
 
 #endif  /* __FLASH_IF_H */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/

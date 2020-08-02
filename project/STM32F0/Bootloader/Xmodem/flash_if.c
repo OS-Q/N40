@@ -8,7 +8,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "flash_if.h"
-#include "boot.h"
+#include "menu.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -204,8 +204,6 @@ uint32_t FLASH_If_WriteProtectionConfig(uint32_t protectionstate)
 
   return (result == HAL_OK ? FLASHIF_OK: FLASHIF_PROTECTION_ERRROR);
 }
-/**
-  * @}
-  */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/
+

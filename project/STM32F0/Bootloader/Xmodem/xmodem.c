@@ -15,7 +15,7 @@
 
 #include "xmodem.h"
 #include "main.h"
-#include "boot.h"
+#include "menu.h"
 #include "flash_if.h"
 
 uint8_t PacketData[PACKET_SIZE + PACKET_DATA_INDEX + PACKET_TRAILER_SIZE];
@@ -300,3 +300,4 @@ void Serial_PutString(uint8_t *p_string)
   HAL_UART_Transmit(&UartHandle, p_string, length, TX_TIMEOUT);
 }
 
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/

@@ -6,7 +6,7 @@
 ****∞Ê»®£∫
 *******************************************************************************/
 
-#include "boot.h"
+#include "menu.h"
 #include "xmodem.h"
 
 pFunction JumpToApplication;
@@ -72,3 +72,4 @@ void Boot2APP(void)
 //			}
 //		}
 
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/
