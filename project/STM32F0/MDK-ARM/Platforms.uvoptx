@@ -202,7 +202,7 @@
   </Target>
 
   <Group>
-    <GroupName>Application/MDK-ARM</GroupName>
+    <GroupName>Application/IAP</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
@@ -210,12 +210,36 @@
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
-      <FileType>2</FileType>
+      <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>startup_stm32f030x6.s</PathWithFileName>
-      <FilenameWithoutPath>startup_stm32f030x6.s</FilenameWithoutPath>
+      <PathWithFileName>..\Bootloader\Xmodem\Boot.c</PathWithFileName>
+      <FilenameWithoutPath>Boot.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>2</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Bootloader\Xmodem\flash_if.c</PathWithFileName>
+      <FilenameWithoutPath>flash_if.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>3</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Bootloader\Xmodem\xmodem.c</PathWithFileName>
+      <FilenameWithoutPath>xmodem.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -229,7 +253,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>2</FileNumber>
+      <FileNumber>4</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -241,7 +265,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>3</FileNumber>
+      <FileNumber>5</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -253,7 +277,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>4</FileNumber>
+      <FileNumber>6</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -266,44 +290,20 @@
   </Group>
 
   <Group>
-    <GroupName>Application/Module</GroupName>
+    <GroupName>Application/MDK-ARM</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>5</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Bootloader\Boot.c</PathWithFileName>
-      <FilenameWithoutPath>Boot.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>6</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Bootloader\flash_if.c</PathWithFileName>
-      <FilenameWithoutPath>flash_if.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
       <FileNumber>7</FileNumber>
-      <FileType>1</FileType>
+      <FileType>2</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Bootloader\xmodem.c</PathWithFileName>
-      <FilenameWithoutPath>xmodem.c</FilenameWithoutPath>
+      <PathWithFileName>startup_stm32f030x6.s</PathWithFileName>
+      <FilenameWithoutPath>startup_stm32f030x6.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
