@@ -7,23 +7,22 @@
 
   <Targets>
     <Target>
-      <TargetName>Platforms</TargetName>
+      <TargetName>Xmodem_client</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F030F4Px</Device>
+          <Device>STM32F107VC</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F0xx_DFP.2.1.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.3.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x20000000-0x20000FFF) IROM(0x8000000-0x8003FFF) CLOCK(8000000) CPUTYPE("Cortex-M0")</Cpu>
+          <Cpu>IROM(0x08000000,0x40000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll></FlashDriverDll>
-          <DeviceId></DeviceId>
-          <RegisterFile></RegisterFile>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_CL -FS08000000 -FL080000 -FP0($$Device:STM32F107VC$Flash\STM32F10x_CL.FLM))</FlashDriverDll>
+          <DeviceId>0</DeviceId>
+          <RegisterFile>$$Device:STM32F107VC$Device\Include\stm32f10x.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +32,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32F030F4$SVD\STM32F030.svd</SFDFile>
+          <SFDFile>$$Device:STM32F107VC$SVD\STM32F107xx.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -48,14 +47,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\obj\</OutputDirectory>
-          <OutputName>Platforms</OutputName>
+          <OutputDirectory>.\Objects\</OutputDirectory>
+          <OutputName>Xmodem_client</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\list\</ListingPath>
+          <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -80,9 +79,9 @@
             <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>1</RunUserProg1>
+            <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>fromelf.exe #L --vhx --8x1 --output main.hex;fromelf --bin -o "$L@L.bin" "#L"</UserProg1Name>
+            <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -106,17 +105,17 @@
           <StopOnExitCode>3</StopOnExitCode>
           <CustomArgument></CustomArgument>
           <IncludeLibraryModules></IncludeLibraryModules>
-          <ComprImg>0</ComprImg>
+          <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments>-REMAP</SimDllArguments>
-          <SimDlgDll>DARMCM1.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM0</SimDlgDllArguments>
+          <SimDllArguments> -REMAP</SimDllArguments>
+          <SimDlgDll>DCM.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
-          <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pCM0</TargetDlgDllArguments>
+          <TargetDlgDll>TCM.DLL</TargetDlgDll>
+          <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -134,10 +133,10 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4103</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
-          <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
+          <Flash2>BIN\UL2CM3.DLL</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
@@ -174,7 +173,7 @@
             <AdsLsxf>1</AdsLsxf>
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
-            <AdsCpuType>"Cortex-M0"</AdsCpuType>
+            <AdsCpuType>"Cortex-M3"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
@@ -189,7 +188,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -246,12 +245,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x1000</Size>
+                <Size>0x10000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x40000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -276,7 +275,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x40000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -301,7 +300,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x1000</Size>
+                <Size>0x10000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -313,7 +312,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>3</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -336,10 +335,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>--C99</MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F030x6</Define>
+              <MiscControls></MiscControls>
+              <Define>USE_STDPERIPH_DRIVER,STM32F10X_CL</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;..\Bootloader\Xmodem;C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Inc;C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy;C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include;C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>.\..\app\inc;.\..\Lib\STM32F1\inc;.\..\Lib\CM3\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -352,7 +351,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>4</ClangAsOpt>
+            <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -373,7 +372,7 @@
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6329</Misc>
+            <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -381,147 +380,97 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Application/IAP</GroupName>
+          <GroupName>app</GroupName>
           <Files>
             <File>
-              <FileName>flash_if.c</FileName>
+              <FileName>xmodem_client.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Bootloader\Xmodem\flash_if.c</FilePath>
+              <FilePath>.\..\app\src\xmodem_client.c</FilePath>
             </File>
-            <File>
-              <FileName>xmodem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Bootloader\Xmodem\xmodem.c</FilePath>
-            </File>
-            <File>
-              <FileName>menu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Bootloader\Xmodem\menu.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/User</GroupName>
-          <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/main.c</FilePath>
+              <FilePath>.\..\app\src\main.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_it.c</FileName>
+              <FileName>uartdriver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/stm32f0xx_it.c</FilePath>
+              <FilePath>.\..\app\src\uartdriver.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_hal_msp.c</FileName>
+              <FileName>modbusrtuslave.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/stm32f0xx_hal_msp.c</FilePath>
+              <FilePath>.\..\app\src\modbusrtuslave.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\app\src\stm32f10x_it.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Application/MDK-ARM</GroupName>
+          <GroupName>stm32StdLib</GroupName>
           <Files>
             <File>
-              <FileName>startup_stm32f030x6.s</FileName>
+              <FileName>misc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\..\Lib\STM32F1\src\stm32f10x_rcc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>startup</GroupName>
+          <Files>
+            <File>
+              <FileName>startup_stm32f10x_cl.s</FileName>
               <FileType>2</FileType>
-              <FilePath>startup_stm32f030x6.s</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Drivers/STM32F0xx_HAL_Driver</GroupName>
-          <Files>
-            <File>
-              <FileName>stm32f0xx_hal_tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c</FilePath>
+              <FilePath>.\..\Lib\STARTUP\startup_stm32f10x_cl.s</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_hal_tim_ex.c</FileName>
+              <FileName>core_cm3.c</FileName>
               <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c</FilePath>
+              <FilePath>.\..\Lib\CM3\src\core_cm3.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f0xx_hal_uart.c</FileName>
+              <FileName>system_stm32f10x.c</FileName>
               <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_uart_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_rcc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_i2c_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_cortex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_pwr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_pwr_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f0xx_hal_flash_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>C:/Users/qitas/STM32Cube/Repository/STM32Cube_FW_F0_V1.5.0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Drivers/CMSIS</GroupName>
-          <Files>
-            <File>
-              <FileName>system_stm32f0xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/system_stm32f0xx.c</FilePath>
+              <FilePath>.\..\Lib\CM3\src\system_stm32f10x.c</FilePath>
             </File>
           </Files>
         </Group>
