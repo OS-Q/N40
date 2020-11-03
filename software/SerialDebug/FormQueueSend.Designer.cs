@@ -53,12 +53,12 @@
             this.btnAddSendList = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvSendList = new System.Windows.Forms.DataGridView();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSend = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colEnable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colMode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -176,7 +176,7 @@
             // 
             // numSendListDelayTime
             // 
-            this.numSendListDelayTime.Location = new System.Drawing.Point(423, 2);
+            this.numSendListDelayTime.Location = new System.Drawing.Point(423, 5);
             this.numSendListDelayTime.Maximum = new decimal(new int[] {
             86400000,
             0,
@@ -194,7 +194,7 @@
             this.cbSendMode.Items.AddRange(new object[] {
             "上帧发送完成后",
             "接收到数据帧后"});
-            this.cbSendMode.Location = new System.Drawing.Point(170, 2);
+            this.cbSendMode.Location = new System.Drawing.Point(170, 4);
             this.cbSendMode.Name = "cbSendMode";
             this.cbSendMode.Size = new System.Drawing.Size(139, 20);
             this.cbSendMode.TabIndex = 1;
@@ -214,7 +214,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(365, 6);
+            this.label17.Location = new System.Drawing.Point(365, 9);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 12);
             this.label17.TabIndex = 3;
@@ -223,7 +223,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(104, 6);
+            this.label16.Location = new System.Drawing.Point(104, 8);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 12);
             this.label16.TabIndex = 3;

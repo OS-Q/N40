@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("SerialDebug")]
-[assembly: AssemblyDescription("基于.NET的串口调试软件")]
+[assembly: AssemblyTitle("XSerial")]
+[assembly: AssemblyDescription("基于.NET串口调试软件")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("谢明鑫")]
-[assembly: AssemblyProduct("SerialDebug")]
-[assembly: AssemblyCopyright("版权所有 (C) 谢明鑫 2019")]
+[assembly: AssemblyCompany("OS-Q")]
+[assembly: AssemblyProduct("XSerial")]
+[assembly: AssemblyCopyright("版权所有 (C) OS-Q 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -25,9 +25,9 @@ using System.Runtime.InteropServices;
 // 程序集的版本信息由下面四个值组成:
 //
 //      主版本
-//      次版本 
+//      次版本
 //      内部版本号
 //      修订号
 //
-[assembly: AssemblyVersion("4.2.7.0")]
-[assembly: AssemblyFileVersion("4.2.7.0")]
+[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyFileVersion("0.0.0")]

@@ -19,11 +19,11 @@ namespace SerialDebug
             {
 
 
-                //处理未捕获的异常  
+                //处理未捕获的异常
                 Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-                //处理UI线程异常  
+                //处理UI线程异常
                 Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
-                //处理非UI线程异常  
+                //处理非UI线程异常
                 AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
                 Application.EnableVisualStyles();
@@ -40,7 +40,7 @@ namespace SerialDebug
 
         static void ExceptionHandler(Exception ex)
         {
-           
+
             try
             {
                 if (ex != null)
@@ -59,7 +59,7 @@ namespace SerialDebug
                     {
                         //writeLog(msg.ToString());
 
-                        string title = string.Format("SerialDebug V{0} exception", Version);
+                        string title = string.Format("Serial V{0} exception", Version);
                         string body = msg.ToString();
                         sentEmail("516409354@qq.com", title, msg.ToString());
 
@@ -75,7 +75,7 @@ namespace SerialDebug
             {
                 Console.WriteLine(e.ToString());
             }
-            
+
 
 
         }

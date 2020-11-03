@@ -19,10 +19,10 @@ namespace SerialDebug
             //  - AssemblyInfo.cs
             this.Text = String.Format("关于 {0}", AssemblyTitle);
             this.LabelProductName.Text = AssemblyProduct + String.Format("  V{0}", AssemblyVersion);
-            this.LabelVersion.Text = "作者：谢明鑫";// String.Format("版本 {0}", AssemblyVersion);
-            this.LabelCopyright.Text = "  QQ：516409354";//AssemblyCopyright;
+            this.LabelVersion.Text = "OS-Q";// String.Format("版本 {0}", AssemblyVersion);
+            this.LabelCopyright.Text = "www.OS-Q.com";//AssemblyCopyright;
             //this.labelCompanyName.Text = AssemblyCompany;
-            this.LabelCompanyName.Text = "Mail：mcuxmx@qq.com";
+            this.LabelCompanyName.Text = "qitas@qitas.cn";
             //this.textBoxDescription.Text = AssemblyDescription;
 
             //this.textBoxDescription.Text

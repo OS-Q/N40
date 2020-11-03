@@ -818,7 +818,7 @@
             this.picReceiveFont.BackColor = System.Drawing.SystemColors.Control;
             this.picReceiveFont.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReceiveFont.Image = ((System.Drawing.Image)(resources.GetObject("picReceiveFont.Image")));
-            this.picReceiveFont.Location = new System.Drawing.Point(652, 2);
+            this.picReceiveFont.Location = new System.Drawing.Point(624, 2);
             this.picReceiveFont.Name = "picReceiveFont";
             this.picReceiveFont.Size = new System.Drawing.Size(18, 18);
             this.picReceiveFont.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -834,7 +834,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtReceive.Location = new System.Drawing.Point(5, 20);
+            this.txtReceive.Location = new System.Drawing.Point(6, 23);
             this.txtReceive.MaxLength = 1048576;
             this.txtReceive.Name = "txtReceive";
             this.txtReceive.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -851,7 +851,7 @@
             this.picSetFont.BackColor = System.Drawing.SystemColors.Control;
             this.picSetFont.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSetFont.Image = ((System.Drawing.Image)(resources.GetObject("picSetFont.Image")));
-            this.picSetFont.Location = new System.Drawing.Point(631, 1);
+            this.picSetFont.Location = new System.Drawing.Point(600, 2);
             this.picSetFont.Name = "picSetFont";
             this.picSetFont.Size = new System.Drawing.Size(18, 18);
             this.picSetFont.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -866,7 +866,7 @@
             this.picReloadConfig.BackColor = System.Drawing.SystemColors.Control;
             this.picReloadConfig.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReloadConfig.Image = ((System.Drawing.Image)(resources.GetObject("picReloadConfig.Image")));
-            this.picReloadConfig.Location = new System.Drawing.Point(652, 2);
+            this.picReloadConfig.Location = new System.Drawing.Point(648, 2);
             this.picReloadConfig.Name = "picReloadConfig";
             this.picReloadConfig.Size = new System.Drawing.Size(18, 18);
             this.picReloadConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -957,7 +957,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(258, 5);
+            this.label9.Location = new System.Drawing.Point(314, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 42;
@@ -971,7 +971,7 @@
             this.groupHyperTerminal.Controls.Add(this.label14);
             this.groupHyperTerminal.Controls.Add(this.chkSendByEnter);
             this.groupHyperTerminal.Controls.Add(this.chkHTCharEcho);
-            this.groupHyperTerminal.Location = new System.Drawing.Point(332, 45);
+            this.groupHyperTerminal.Location = new System.Drawing.Point(28, 118);
             this.groupHyperTerminal.Name = "groupHyperTerminal";
             this.groupHyperTerminal.Size = new System.Drawing.Size(161, 223);
             this.groupHyperTerminal.TabIndex = 43;
@@ -1053,7 +1053,7 @@
             this.cbCharacterEncoding.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbCharacterEncoding.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbCharacterEncoding.FormattingEnabled = true;
-            this.cbCharacterEncoding.Location = new System.Drawing.Point(317, 1);
+            this.cbCharacterEncoding.Location = new System.Drawing.Point(374, 1);
             this.cbCharacterEncoding.Name = "cbCharacterEncoding";
             this.cbCharacterEncoding.Size = new System.Drawing.Size(219, 20);
             this.cbCharacterEncoding.TabIndex = 41;
@@ -1062,7 +1062,7 @@
             // labClearReceive
             // 
             this.labClearReceive.AutoSize = true;
-            this.labClearReceive.Location = new System.Drawing.Point(62, 4);
+            this.labClearReceive.Location = new System.Drawing.Point(57, 5);
             this.labClearReceive.Name = "labClearReceive";
             this.labClearReceive.Size = new System.Drawing.Size(77, 12);
             this.labClearReceive.TabIndex = 34;
@@ -1076,7 +1076,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Label8.AutoSize = true;
             this.Label8.BackColor = System.Drawing.Color.Transparent;
-            this.Label8.Location = new System.Drawing.Point(3, 4);
+            this.Label8.Location = new System.Drawing.Point(9, 4);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(53, 12);
             this.Label8.TabIndex = 32;
@@ -1087,7 +1087,7 @@
             // 
             this.lnkSaveData.AutoSize = true;
             this.lnkSaveData.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lnkSaveData.Location = new System.Drawing.Point(163, 4);
+            this.lnkSaveData.Location = new System.Drawing.Point(144, 5);
             this.lnkSaveData.Name = "lnkSaveData";
             this.lnkSaveData.Size = new System.Drawing.Size(53, 12);
             this.lnkSaveData.TabIndex = 33;
@@ -1141,7 +1141,7 @@
             // labClearSend
             // 
             this.labClearSend.AutoSize = true;
-            this.labClearSend.Location = new System.Drawing.Point(62, 2);
+            this.labClearSend.Location = new System.Drawing.Point(56, 2);
             this.labClearSend.Name = "labClearSend";
             this.labClearSend.Size = new System.Drawing.Size(77, 12);
             this.labClearSend.TabIndex = 35;
@@ -1164,7 +1164,7 @@
             // 
             this.lnkOpen.AutoSize = true;
             this.lnkOpen.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lnkOpen.Location = new System.Drawing.Point(161, 2);
+            this.lnkOpen.Location = new System.Drawing.Point(147, 2);
             this.lnkOpen.Name = "lnkOpen";
             this.lnkOpen.Size = new System.Drawing.Size(53, 12);
             this.lnkOpen.TabIndex = 34;

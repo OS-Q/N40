@@ -52,7 +52,7 @@ namespace SerialDebug
         private int SendTempIndex = 0;
 
 
-        private delegate void TextBoxAppendDel(string str);             // ÎÄ±¾¿òÌí¼Ó×Ö·û
+        private delegate void TextBoxAppendDel(string str);             // æ–‡æœ¬æ¡†æ·»åŠ å­—ç¬¦
         TextBoxAppendDel txtReceiveAppend;
 
         private delegate void SetLableTextDel(Label lab, string Text);
@@ -61,7 +61,7 @@ namespace SerialDebug
         private double splitPercent = 0.0f;
 
 
-        bool HyperTerminalMode = false;      // ³¬¼¶ÖÕ¶ËÄ£Ê½
+        bool HyperTerminalMode = false;      // è¶…çº§ç»ˆç«¯æ¨¡å¼
 
         private void LoadConfig()
         {
@@ -152,7 +152,7 @@ namespace SerialDebug
 
             SetMode(false);
 
-            ////¼ÓÈë²¨ÌØÂÊ
+            ////åŠ å…¥æ³¢ç‰¹ç‡
             //cbBaudRate.Items.Add(110);
             //cbBaudRate.Items.Add(300);
             //cbBaudRate.Items.Add(600);
@@ -172,7 +172,7 @@ namespace SerialDebug
             ////cbBaudRate.SelectedItem = 9600;
             //cbBaudRate.Text = Convert.ToString(9600);
 
-            //ÆæÅ¼½ÏÑéÎ»
+            //å¥‡å¶è¾ƒéªŒä½
             cbParity.Items.Add(System.IO.Ports.Parity.Even);
             cbParity.Items.Add(System.IO.Ports.Parity.Mark);
             cbParity.Items.Add(System.IO.Ports.Parity.None);
@@ -181,14 +181,14 @@ namespace SerialDebug
             cbParity.SelectedItem = System.IO.Ports.Parity.None;
 
 
-            //Êı¾İÎ»
+            //æ•°æ®ä½
             cbDataBit.Items.Add(5);
             cbDataBit.Items.Add(6);
             cbDataBit.Items.Add(7);
             cbDataBit.Items.Add(8);
             cbDataBit.SelectedItem = 8;
 
-            //Í£Ö¹Î»
+            //åœæ­¢ä½
             //cbStopBit.Items.Add(System.IO.Ports.StopBits.None);
             cbStopBit.Items.Add(System.IO.Ports.StopBits.One);
             cbStopBit.Items.Add(System.IO.Ports.StopBits.OnePointFive);
@@ -210,7 +210,7 @@ namespace SerialDebug
             serialPort.RtsEnable = chkRTS.Checked;
 
             Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            //this.Text = string.Format("{0} V{1}    ×÷Õß£ºÆôÑÒ  QQ£º516409354", Application.ProductName, Version);
+            //this.Text = string.Format("{0} V{1}    ä½œè€…ï¼šå¯å²©  QQï¼š516409354", Application.ProductName, Version);
             this.Text = string.Format("{0} V{1}", Application.ProductName, Version);
 
             CheckForIllegalCrossThreadCalls = false;
@@ -357,10 +357,10 @@ namespace SerialDebug
 
 
 
-        #region ´®¿ÚÇø²Ù×÷
+        #region ä¸²å£åŒºæ“ä½œ
 
         /// <summary>
-        /// ´ò¿ª¹Ø±Õ´®¿Ú²Ù×÷¡£
+        /// æ‰“å¼€å…³é—­ä¸²å£æ“ä½œã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -369,7 +369,7 @@ namespace SerialDebug
             ////throw new Exception("<xxxxxxxx&\"yyy\"\r\nzzz>");
             try
             {
-                if (btnPortOpt.Text == "´ò¿ª´®¿Ú")
+                if (btnPortOpt.Text == "æ‰“å¼€ä¸²å£")
                 {
                     IsStart = true;
                     dataDispQueue.Clear();
@@ -386,7 +386,7 @@ namespace SerialDebug
                     }
                     else
                     {
-                        throw new Exception("ÎŞ·¨Ê¶±ğµÄ´®¿Ú¡£");
+                        throw new Exception("æ— æ³•è¯†åˆ«çš„ä¸²å£ã€‚");
                     }
 
                     serialPort.BaudRate = Convert.ToInt32(cbBaudRate.Text);
@@ -439,14 +439,14 @@ namespace SerialDebug
                 if (serialPort.IsOpen)
                 {
                     picPortState.Image = ImageList.Images["open"];
-                    btnPortOpt.Text = "¹Ø±Õ´®¿Ú";
+                    btnPortOpt.Text = "å…³é—­ä¸²å£";
                     cbComName.Enabled = false;
                     UpdatalabText();
                 }
                 else
                 {
                     picPortState.Image = ImageList.Images["close"];
-                    btnPortOpt.Text = "´ò¿ª´®¿Ú";
+                    btnPortOpt.Text = "æ‰“å¼€ä¸²å£";
                     cbComName.Enabled = true;
                     UpdatalabText();
                     SetSendEnable(false);
@@ -455,7 +455,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ñ¡ÔñÍ¨ĞÅ¿Ú¡£
+        /// é€‰æ‹©é€šä¿¡å£ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -485,7 +485,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ²¨ÌØÂÊ¡£
+        /// æ³¢ç‰¹ç‡ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -505,7 +505,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ğ£ÑéÎ»
+        /// æ ¡éªŒä½
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -525,7 +525,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Êı¾İÎ»¡£
+        /// æ•°æ®ä½ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -545,7 +545,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Í£Ö¹Î»¡£
+        /// åœæ­¢ä½ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -565,7 +565,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Á÷¿ØÖÆ
+        /// æµæ§åˆ¶
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -601,7 +601,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ´®¿ÚºÅÏÂÀ­¿ò
+        /// ä¸²å£å·ä¸‹æ‹‰æ¡†
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -655,7 +655,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ÉèÖÃRTS
+        /// è®¾ç½®RTS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -666,7 +666,7 @@ namespace SerialDebug
                 if (serialPort.Handshake == Handshake.RequestToSend || serialPort.Handshake == Handshake.RequestToSendXOnXOff)
                 {
                     chkRTS.Checked = !chkRTS.Checked;
-                    MessageBox.Show("µ±Á÷¿ØÖÆÑ¡Ôñ¡°Ó²¼ş¡±»ò¡°Ó²¼şºÍÈí¼ş¡±Ê±ÎŞ·¨¶ÁÈ¡»òÉèÖÃDTS", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("å½“æµæ§åˆ¶é€‰æ‹©â€œç¡¬ä»¶â€æˆ–â€œç¡¬ä»¶å’Œè½¯ä»¶â€æ—¶æ— æ³•è¯»å–æˆ–è®¾ç½®DTS", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -680,7 +680,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ÉèÖÃDTR
+        /// è®¾ç½®DTR
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -700,13 +700,13 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// Ë¢ĞÂ×´Ì¬À¸¡£
+        /// åˆ·æ–°çŠ¶æ€æ ã€‚
         /// </summary>
         private void UpdatalabText()
         {
             if (serialPort.IsOpen)
             {
-                string str = string.Format("Í¨ĞÅÕı³£({0},{1},{2},{3},{4})",
+                string str = string.Format("é€šä¿¡æ­£å¸¸({0},{1},{2},{3},{4})",
                       serialPort.PortName, serialPort.BaudRate, serialPort.Parity, (int)serialPort.DataBits,
                       (float)serialPort.StopBits);
 
@@ -714,7 +714,7 @@ namespace SerialDebug
             }
             else
             {
-                labIsSerialOpen.Text = "Í¨ĞÅ¿ÚÒÑ¹Ø±Õ";
+                labIsSerialOpen.Text = "é€šä¿¡å£å·²å…³é—­";
             }
 
         }
@@ -723,12 +723,12 @@ namespace SerialDebug
         #endregion
 
 
-        #region ÓÒ¼ü²Ëµ¥¹¦ÄÜ
+        #region å³é”®èœå•åŠŸèƒ½
 
         private RichTextBox txtBoxMenu = new RichTextBox();
 
         /// <summary>
-        /// ³·Ïú¡£
+        /// æ’¤é”€ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -738,7 +738,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ¼ôÇĞ¡£
+        /// å‰ªåˆ‡ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -748,7 +748,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ¸´ÖÆ¡£
+        /// å¤åˆ¶ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -758,7 +758,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Õ³Ìù¡£
+        /// ç²˜è´´ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -768,7 +768,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// É¾³ı¡£
+        /// åˆ é™¤ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -778,7 +778,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// È«Ñ¡¡£
+        /// å…¨é€‰ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -788,7 +788,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ×Ö·û´®×ªÊ®Áù½øÖÆ¡£
+        /// å­—ç¬¦ä¸²è½¬åå…­è¿›åˆ¶ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -813,7 +813,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ê®Áù½øÖÆ×ª×Ö·û´®¡£
+        /// åå…­è¿›åˆ¶è½¬å­—ç¬¦ä¸²ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -837,7 +837,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ¶ş½øÖÆ×ªÊ®Áù½øÖÆ
+        /// äºŒè¿›åˆ¶è½¬åå…­è¿›åˆ¶
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -862,7 +862,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ê®Áù½øÖÆ×ª¶ş½øÖÆ
+        /// åå…­è¿›åˆ¶è½¬äºŒè¿›åˆ¶
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -888,7 +888,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ê®Áù½øÖÆ×ªÊ®½øÖÆ¡£
+        /// åå…­è¿›åˆ¶è½¬åè¿›åˆ¶ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -914,7 +914,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ê®½øÖÆ×ªÊ®Áù½øÖÆ¡£
+        /// åè¿›åˆ¶è½¬åå…­è¿›åˆ¶ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -939,7 +939,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ×Ö·û´®×ªÊ®½øÖÆ¡£
+        /// å­—ç¬¦ä¸²è½¬åè¿›åˆ¶ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -964,7 +964,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ê®½øÖÆ×ª×Ö·û´®¡£
+        /// åè¿›åˆ¶è½¬å­—ç¬¦ä¸²ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -995,7 +995,7 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// µ¯³öÓÒ¼ü²Ëµ¥¡£
+        /// å¼¹å‡ºå³é”®èœå•ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1040,7 +1040,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Êó±ê½øÈë½ÓÊÕÇø¡£
+        /// é¼ æ ‡è¿›å…¥æ¥æ”¶åŒºã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1050,7 +1050,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Êó±ê½øÈë·¢ËÍÇø¡£
+        /// é¼ æ ‡è¿›å…¥å‘é€åŒºã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1085,10 +1085,10 @@ namespace SerialDebug
         #endregion
 
 
-        #region ¹¦ÄÜº¯Êı
+        #region åŠŸèƒ½å‡½æ•°
 
         /// <summary>
-        /// Ê®Áù½øÖÆ×Ö·û´®×ªÊ®½øÖÆ¡£
+        /// åå…­è¿›åˆ¶å­—ç¬¦ä¸²è½¬åè¿›åˆ¶ã€‚
         /// </summary>
         /// <param name="hexStr"></param>
         /// <returns></returns>
@@ -1098,7 +1098,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Ê®½øÖÆ×Ö·û´®×ªÊ®½øÖÆ¡£
+        /// åè¿›åˆ¶å­—ç¬¦ä¸²è½¬åè¿›åˆ¶ã€‚
         /// </summary>
         /// <param name="decStr"></param>
         /// <returns></returns>
@@ -1112,10 +1112,10 @@ namespace SerialDebug
         #endregion
 
 
-        #region ×´Ì¬À¸²Ù×÷
+        #region çŠ¶æ€æ æ“ä½œ
 
         /// <summary>
-        /// ÉèÖÃ½ÓÊÕÇø×ÖÌå
+        /// è®¾ç½®æ¥æ”¶åŒºå­—ä½“
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1153,7 +1153,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ÖÃ¶¥ÉèÖÃ
+        /// ç½®é¡¶è®¾ç½®
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1162,7 +1162,7 @@ namespace SerialDebug
             this.TopMost = !this.TopMost;
             if (this.TopMost == true)
             {
-                this.Text = Application.ProductName + " V" + Version + "  [ÖÃ¶¥]";
+                this.Text = Application.ProductName + " V" + Version + "  [ç½®é¡¶]";
                 picTop.Image = imglistTop.Images["nailon"];
             }
             else
@@ -1174,18 +1174,18 @@ namespace SerialDebug
             string textToolTip;
             if (this.TopMost)
             {
-                textToolTip = "È¡ÏûÖÃ¶¥";
+                textToolTip = "å–æ¶ˆç½®é¡¶";
             }
             else
             {
-                textToolTip = "ÖÃ¶¥";
+                textToolTip = "ç½®é¡¶";
             }
             ToolTip.SetToolTip(picTop, textToolTip);
         }
 
 
         /// <summary>
-        /// Çå¿Õ½ÓÊÕÇø
+        /// æ¸…ç©ºæ¥æ”¶åŒº
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1195,7 +1195,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Çå¿Õ·¢ËÍÇø
+        /// æ¸…ç©ºå‘é€åŒº
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1205,7 +1205,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Çå¿Õ¼ÆÊı
+        /// æ¸…ç©ºè®¡æ•°
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1218,7 +1218,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Çå¿Õ½ÓÊÕ¼ÆÊı
+        /// æ¸…ç©ºæ¥æ”¶è®¡æ•°
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1229,7 +1229,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// Çå¿Õ·¢ËÍ¼ÆÊı
+        /// æ¸…ç©ºå‘é€è®¡æ•°
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1241,7 +1241,7 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// °ïÖú
+        /// å¸®åŠ©
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1256,7 +1256,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ¹Ø±Õ
+        /// å…³é—­
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1268,11 +1268,11 @@ namespace SerialDebug
         #endregion
 
 
-        #region ´®¿Ú½ÓÊÕÏÔÊ¾
+        #region ä¸²å£æ¥æ”¶æ˜¾ç¤º
 
 
         ///// <summary>
-        ///// ´®¿Ú½ÓÊÕÖĞ¶Ï¡£
+        ///// ä¸²å£æ¥æ”¶ä¸­æ–­ã€‚
         ///// </summary>
         ///// <param name="sender"></param>
         ///// <param name="e"></param>
@@ -1319,12 +1319,12 @@ namespace SerialDebug
         //    }
         //    catch (Exception ex)
         //    {
-        //        Console.WriteLine("´®¿Ú½ÓÊÕ" + ex.Message);
+        //        Console.WriteLine("ä¸²å£æ¥æ”¶" + ex.Message);
         //    }
         //}
 
         ///// <summary>
-        ///// ½ÓÊÕ´¦ÀíÏß³Ì¡£
+        ///// æ¥æ”¶å¤„ç†çº¿ç¨‹ã€‚
         ///// </summary>
         //private void ReceiveThreadHandle()
         //{
@@ -1345,14 +1345,14 @@ namespace SerialDebug
         //            {
         //                StringBuilder sbMsg = new StringBuilder();
 
-        //                if (chkDisplay.Checked)  // ÊÇ·ñÏÔÊ¾
+        //                if (chkDisplay.Checked)  // æ˜¯å¦æ˜¾ç¤º
         //                {
         //                    if (chkTimeStamp.Checked)
         //                    {
         //                        sbMsg.AppendFormat("<<<{0}", data.TimeString);
         //                    }
 
-        //                    if (chkReceiveHex.Checked) // Ê®Áù½øÖÆÏÔÊ¾
+        //                    if (chkReceiveHex.Checked) // åå…­è¿›åˆ¶æ˜¾ç¤º
         //                    {
         //                        sbMsg.AppendFormat("{0}", data.HexString);
 
@@ -1362,7 +1362,7 @@ namespace SerialDebug
         //                        sbMsg.AppendFormat("{0}", data.ASCIIString);
         //                    }
 
-        //                    if (chkWrap.Checked || chkTimeStamp.Checked)                    // ×Ô¶¯»»ĞĞ
+        //                    if (chkWrap.Checked || chkTimeStamp.Checked)                    // è‡ªåŠ¨æ¢è¡Œ
         //                    {
         //                        sbMsg.Append(Environment.NewLine);
         //                    }
@@ -1379,13 +1379,13 @@ namespace SerialDebug
         //        }
         //        catch (Exception ex)
         //        {
-        //            Console.WriteLine("Êı¾İ´¦ÀíÏß³Ì£º" + ex.Message);
+        //            Console.WriteLine("æ•°æ®å¤„ç†çº¿ç¨‹ï¼š" + ex.Message);
         //        }
         //    }
         //}
 
         /// <summary>
-        /// ¸üĞÂ½ÓÊÕ³¤¶È¡£
+        /// æ›´æ–°æ¥æ”¶é•¿åº¦ã€‚
         /// </summary>
         /// <param name="count"></param>
         private void UpdateRx(UInt64 count)
@@ -1415,7 +1415,7 @@ namespace SerialDebug
             TextBoxReceiveAppend(Color.Black, appendText);
         }
         /// <summary>
-        /// ¸üĞÂ½ÓÊÕÎÄ±¾¿ò¡£
+        /// æ›´æ–°æ¥æ”¶æ–‡æœ¬æ¡†ã€‚
         /// </summary>
         /// <param name="appendText"></param>
         private void TextBoxReceiveAppend(Color color, string appendText)
@@ -1451,7 +1451,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ÉèÖÃ½ÓÊÕ³¬Ê±Ê±¼ä
+        /// è®¾ç½®æ¥æ”¶è¶…æ—¶æ—¶é—´
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1467,7 +1467,7 @@ namespace SerialDebug
         private void DisplayContent(SerialStreamType type, string text)
         {
 
-            //ÉÏ´ÎÎª·¢ËÍÊı¾İ
+            //ä¸Šæ¬¡ä¸ºå‘é€æ•°æ®
             if (text != "")
             {
                 switch (type)
@@ -1615,11 +1615,11 @@ namespace SerialDebug
 
 
 
-        #region ´®¿Ú·¢ËÍ
+        #region ä¸²å£å‘é€
 
 
         /// <summary>
-        /// ¸üĞÂ×´Ì¬À¸½ÓÊÕ¡£
+        /// æ›´æ–°çŠ¶æ€æ æ¥æ”¶ã€‚
         /// </summary>
         /// <param name="count"></param>
         private void UpdateTx(UInt64 count)
@@ -1629,7 +1629,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ¸üĞÂ·¢ËÍÇøÎÄ±¾
+        /// æ›´æ–°å‘é€åŒºæ–‡æœ¬
         /// </summary>
         /// <param name="text"></param>
         private void txtSendUpdate(string text)
@@ -1648,7 +1648,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// °´ÏÂ°´¼üµÄÌØÊâ²Ù×÷
+        /// æŒ‰ä¸‹æŒ‰é”®çš„ç‰¹æ®Šæ“ä½œ
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1717,7 +1717,7 @@ namespace SerialDebug
         {
             if (IsCtrlPressed)
             {
-                if (e.KeyChar == '\r' || e.KeyChar == '\n') // »Ø³µ
+                if (e.KeyChar == '\r' || e.KeyChar == '\n') // å›è½¦
                 {
                     e.Handled = true;
                 }
@@ -1727,7 +1727,7 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// µã»÷¿ªÊ¼·¢ËÍ»òÕßÍ£Ö¹·¢ËÍ¡£
+        /// ç‚¹å‡»å¼€å§‹å‘é€æˆ–è€…åœæ­¢å‘é€ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1735,12 +1735,12 @@ namespace SerialDebug
         {
             try
             {
-                if (btnSend.Text == "¿ªÊ¼·¢ËÍ")
+                if (btnSend.Text == "å¼€å§‹å‘é€")
                 {
 
                     if (serialPort.IsOpen == false)
                     {
-                        MessageBox.Show("´®¿ÚÎ´´ò¿ª£¬ÇëÏÈ´ò¿ª´®¿Ú", "·¢ËÍÊı¾İ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("ä¸²å£æœªæ‰“å¼€ï¼Œè¯·å…ˆæ‰“å¼€ä¸²å£", "å‘é€æ•°æ®", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
 
@@ -1766,7 +1766,7 @@ namespace SerialDebug
                         List<CSendParam> list = CurrentSendForm.GetSendList();
                         if (list.Count <= 0)
                         {
-                            MessageBox.Show("Ã»ÓĞÈÎºÎ¿É·¢ËÍµÄÊı¾İ", "·¢ËÍÊı¾İ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("æ²¡æœ‰ä»»ä½•å¯å‘é€çš„æ•°æ®", "å‘é€æ•°æ®", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         else
@@ -1810,9 +1810,9 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// ÉèÖÃ·¢ËÍÊ¹ÄÜ¡£
+        /// è®¾ç½®å‘é€ä½¿èƒ½ã€‚
         /// </summary>
-        /// <param name="IsEnable">µ±ÎªTrueÊ±±íÊ¾¿ªÊ¼·¢ËÍ£¬False±íÊ¾Í£Ö¹·¢ËÍ¡£</param>
+        /// <param name="IsEnable">å½“ä¸ºTrueæ—¶è¡¨ç¤ºå¼€å§‹å‘é€ï¼ŒFalseè¡¨ç¤ºåœæ­¢å‘é€ã€‚</param>
         private void SetSendEnable(bool IsEnable)
         {
             if (this.InvokeRequired)
@@ -1828,9 +1828,9 @@ namespace SerialDebug
                 if (IsEnable == true)
                 {
 
-                    if (btnSend.Text != "Í£Ö¹·¢ËÍ")
+                    if (btnSend.Text != "åœæ­¢å‘é€")
                     {
-                        btnSend.Text = "Í£Ö¹·¢ËÍ";
+                        btnSend.Text = "åœæ­¢å‘é€";
 
                         radSendModeNormal.Enabled = false;
                         radSendModeQueue.Enabled = false;
@@ -1845,9 +1845,9 @@ namespace SerialDebug
                 else
                 {
 
-                    if (btnSend.Text != "¿ªÊ¼·¢ËÍ")
+                    if (btnSend.Text != "å¼€å§‹å‘é€")
                     {
-                        btnSend.Text = "¿ªÊ¼·¢ËÍ";
+                        btnSend.Text = "å¼€å§‹å‘é€";
 
                         radSendModeNormal.Enabled = true;
                         radSendModeQueue.Enabled = true;
@@ -1870,10 +1870,10 @@ namespace SerialDebug
 
 
 
-        #region ±£´æÎÄ¼şºÍ´ò¿ªÎÄ¼ş
+        #region ä¿å­˜æ–‡ä»¶å’Œæ‰“å¼€æ–‡ä»¶
 
         /// <summary>
-        /// µ¯³ö±£´æ²Ëµ¥
+        /// å¼¹å‡ºä¿å­˜èœå•
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1891,7 +1891,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// µ¯³ö±£´æ²Ëµ¥¡£
+        /// å¼¹å‡ºä¿å­˜èœå•ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1910,31 +1910,31 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// °´Ô­Ê¼ÏÔÊ¾±£´æ¡£
+        /// æŒ‰åŸå§‹æ˜¾ç¤ºä¿å­˜ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void menuSaveStringToText_Click(object sender, EventArgs e)
         {
 
-            sFileDlg.Filter = "ÎÄ±¾ÎÄ¼ş(*.txt)|*.txt";
+            sFileDlg.Filter = "æ–‡æœ¬æ–‡ä»¶(*.txt)|*.txt";
             if (sFileDlg.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(sFileDlg.FileName, txtReceive.Text);
-                MessageBox.Show("ÎÄ¼şÒÑ±£´æµ½\n" + sFileDlg.FileName, sFileDlg.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("æ–‡ä»¶å·²ä¿å­˜åˆ°\n" + sFileDlg.FileName, sFileDlg.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
 
         /// <summary>
-        /// ½«½ÓÊÕÇø×ªÎª¶ş½øÖÆÏÔÊ¾¡£
+        /// å°†æ¥æ”¶åŒºè½¬ä¸ºäºŒè¿›åˆ¶æ˜¾ç¤ºã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void menuSaveStringToBinary_Click(object sender, EventArgs e)
         {
 
-            sFileDlg.Filter = "¶ş½øÖÆÎÄ¼ş(*.bin)|*.bin";
+            sFileDlg.Filter = "äºŒè¿›åˆ¶æ–‡ä»¶(*.bin)|*.bin";
             if (sFileDlg.ShowDialog() == DialogResult.OK)
             {
                 FileStream fs = new FileStream(sFileDlg.FileName, FileMode.OpenOrCreate);
@@ -1943,7 +1943,7 @@ namespace SerialDebug
                 {
                     byte[] bytes = System.Text.ASCIIEncoding.Default.GetBytes(txtReceive.Text);
                     bw.Write(bytes);
-                    MessageBox.Show("ÎÄ¼şÒÑ±£´æµ½\n" + sFileDlg.FileName, sFileDlg.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("æ–‡ä»¶å·²ä¿å­˜åˆ°\n" + sFileDlg.FileName, sFileDlg.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -1960,14 +1960,14 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// ´ÓÊ®Áù½øÖÆµ½¶ş½øÖÆÎÄ¼ş¡£
+        /// ä»åå…­è¿›åˆ¶åˆ°äºŒè¿›åˆ¶æ–‡ä»¶ã€‚
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void menuSaveHexToBinary_Click(object sender, EventArgs e)
         {
 
-            sFileDlg.Filter = "¶ş½øÖÆÎÄ¼ş(*.bin)|*.bin";
+            sFileDlg.Filter = "äºŒè¿›åˆ¶æ–‡ä»¶(*.bin)|*.bin";
             if (sFileDlg.ShowDialog() == DialogResult.OK)
             {
                 FileStream fs = new FileStream(sFileDlg.FileName, FileMode.OpenOrCreate);
@@ -1979,7 +1979,7 @@ namespace SerialDebug
                     string[] strArray = txtReceive.Text.TrimEnd().Replace(Environment.NewLine, "").Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     byte[] bytes = Array.ConvertAll<string, byte>(strArray, new Converter<string, byte>(HexStringToByte));
                     bw.Write(bytes);
-                    MessageBox.Show("ÎÄ¼şÒÑ±£´æµ½\n" + sFileDlg.FileName, sFileDlg.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("æ–‡ä»¶å·²ä¿å­˜åˆ°\n" + sFileDlg.FileName, sFileDlg.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -1998,7 +1998,7 @@ namespace SerialDebug
 
         private void lnkOpen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            oFileDlg.Filter = "ÎÄ±¾ÎÄ¼ş(*.txt)|*.txt|¶ş½øÖÆÎÄ¼ş(*.bin)|*.bin|ËùÓĞÎÄ¼ş(*.*)|*.*";
+            oFileDlg.Filter = "æ–‡æœ¬æ–‡ä»¶(*.txt)|*.txt|äºŒè¿›åˆ¶æ–‡ä»¶(*.bin)|*.bin|æ‰€æœ‰æ–‡ä»¶(*.*)|*.*";
             if (oFileDlg.ShowDialog() == DialogResult.OK)
             {
                 string strExt = System.IO.Path.GetExtension(oFileDlg.FileName).ToUpper();
@@ -2033,11 +2033,11 @@ namespace SerialDebug
         #endregion
 
 
-        #region ³¬¼¶ÖÕ¶ËÄ£Ê½
+        #region è¶…çº§ç»ˆç«¯æ¨¡å¼
 
 
         /// <summary>
-        /// ³¬¼¶ÖÕ¶ËÏÔÊ¾ÎÄ±¾
+        /// è¶…çº§ç»ˆç«¯æ˜¾ç¤ºæ–‡æœ¬
         /// </summary>
         /// <param name="appendText"></param>
         private void HyperTerminalShowText(string appendText)
@@ -2046,7 +2046,7 @@ namespace SerialDebug
             HyperTerminal_HandleMessage(appendText);
             return;
 #if OLD_SHOW_HYPER
-            #region ³¬¼¶ÖÕ¶ËÄ£Ê½ÏÔÊ¾
+            #region è¶…çº§ç»ˆç«¯æ¨¡å¼æ˜¾ç¤º
             string[] textBoxArray = txtReceive.Lines;
             int indexLines = txtReceive.Lines.Length;
             if (indexLines > 0)
@@ -2137,7 +2137,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// V3.1´¦Àí
+        /// V3.1å¤„ç†
         /// </summary>
         /// <param name="message"></param>
         private void HyperTerminal_HandleMessage(string message)
@@ -2233,7 +2233,7 @@ namespace SerialDebug
 
         string htSendString = string.Empty;
         /// <summary>
-        /// °´¼ü°´ÏÂ
+        /// æŒ‰é”®æŒ‰ä¸‹
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -2247,14 +2247,14 @@ namespace SerialDebug
 
             if (chkSendByEnter.Checked)
             {
-                if (e.KeyChar == 8)     // ÍË¸ñ
+                if (e.KeyChar == 8)     // é€€æ ¼
                 {
                     if (htSendString.Length > 0)
                     {
                         htSendString = htSendString.Remove(htSendString.Length - 1, 1);
                     }
                 }
-                if (e.KeyChar == 13)    // »Ø³µ
+                if (e.KeyChar == 13)    // å›è½¦
                 {
                     serialPort.Write(string.Format("{0}{1}", htSendString, HtEofChars));
                     htSendString = string.Empty;
@@ -2276,7 +2276,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ÆÕÍ¨Ä£Ê½µ½³¬¼¶ÖÕ¶ËÄ£Ê½
+        /// æ™®é€šæ¨¡å¼åˆ°è¶…çº§ç»ˆç«¯æ¨¡å¼
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -2286,7 +2286,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ³¬¼¶ÖÕ¶ËÄ£Ê½µ½ÆÕÍ¨Ä£Ê½
+        /// è¶…çº§ç»ˆç«¯æ¨¡å¼åˆ°æ™®é€šæ¨¡å¼
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -2295,20 +2295,20 @@ namespace SerialDebug
             SetMode(false);
         }
 
-        string HtEofChars = string.Empty;       // »Ø³µ·¢ËÍÊ±¸úµÄÖÕÖ¹·û
+        string HtEofChars = string.Empty;       // å›è½¦å‘é€æ—¶è·Ÿçš„ç»ˆæ­¢ç¬¦
         /// <summary>
-        /// Ñ¡Ôñ½áÊø·û
+        /// é€‰æ‹©ç»“æŸç¬¦
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cbHTEOFChars_SelectedIndexChanged(object sender, EventArgs e)
         {
             //NONE
-            //NULL£¨\0£©
-            //LF£¨\n£©
-            //CR+LF£¨\r\n£©
-            //LF+CR£¨\n\r£©
-            //CR£¨\r£©
+            //NULLï¼ˆ\0ï¼‰
+            //LFï¼ˆ\nï¼‰
+            //CR+LFï¼ˆ\r\nï¼‰
+            //LF+CRï¼ˆ\n\rï¼‰
+            //CRï¼ˆ\rï¼‰
 
             switch (cbHTEOFChars.SelectedIndex)
             {
@@ -2340,7 +2340,7 @@ namespace SerialDebug
 
 
         /// <summary>
-        /// ½ÓÊÕÊÂ¼ş
+        /// æ¥æ”¶äº‹ä»¶
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -2351,14 +2351,14 @@ namespace SerialDebug
                 string msg = "";
                 StringBuilder sbMsg = new StringBuilder();
 
-                if (chkShowReceive.Checked)  // ÊÇ·ñÏÔÊ¾
+                if (chkShowReceive.Checked)  // æ˜¯å¦æ˜¾ç¤º
                 {
                     if (chkTimeStamp.Checked)
                     {
                         sbMsg.AppendFormat("{0}[<--]", e.TimeString);
                     }
 
-                    if (chkReceiveHex.Checked) // Ê®Áù½øÖÆÏÔÊ¾
+                    if (chkReceiveHex.Checked) // åå…­è¿›åˆ¶æ˜¾ç¤º
                     {
                         sbMsg.AppendFormat("{0}", e.HexString);
 
@@ -2368,7 +2368,7 @@ namespace SerialDebug
                         sbMsg.AppendFormat("{0}", e.ASCIIString);
                     }
 
-                    if (chkWrap.Checked || chkTimeStamp.Checked)                    // ×Ô¶¯»»ĞĞ
+                    if (chkWrap.Checked || chkTimeStamp.Checked)                    // è‡ªåŠ¨æ¢è¡Œ
                     {
                         sbMsg.Append(Environment.NewLine);
                     }
@@ -2397,7 +2397,7 @@ namespace SerialDebug
         }
 
         /// <summary>
-        /// ·¢ËÍÏÔÊ¾ÊÂ¼ş
+        /// å‘é€æ˜¾ç¤ºäº‹ä»¶
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

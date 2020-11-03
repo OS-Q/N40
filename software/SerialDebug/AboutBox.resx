@@ -128,7 +128,7 @@
 </value>
   </data>
   <data name="TextBoxDescription.Text" xml:space="preserve">
-    <value>网址：https://github.com/mcuxmx/SerialDebug
+    <value>https://github.com/OS-Q/W40
 
 支持多种发送模式：普通模式，队列模式，文件模式。
 
