@@ -75,7 +75,6 @@
             this.labTx = new System.Windows.Forms.Label();
             this.labIsSerialOpen = new System.Windows.Forms.Label();
             this.labRx = new System.Windows.Forms.Label();
-            this.btnEnd = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.chkShowReceive = new System.Windows.Forms.CheckBox();
@@ -553,7 +552,7 @@
             // 
             this.labTx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labTx.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labTx.Location = new System.Drawing.Point(544, 538);
+            this.labTx.Location = new System.Drawing.Point(619, 538);
             this.labTx.Name = "labTx";
             this.labTx.Size = new System.Drawing.Size(88, 20);
             this.labTx.TabIndex = 35;
@@ -577,7 +576,7 @@
             // 
             this.labRx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labRx.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labRx.Location = new System.Drawing.Point(450, 538);
+            this.labRx.Location = new System.Drawing.Point(521, 538);
             this.labRx.Name = "labRx";
             this.labRx.Size = new System.Drawing.Size(88, 20);
             this.labRx.TabIndex = 37;
@@ -586,25 +585,12 @@
             this.ToolTip.SetToolTip(this.labRx, "双击清零");
             this.labRx.DoubleClick += new System.EventHandler(this.labRx_DoubleClick);
             // 
-            // btnEnd
-            // 
-            this.btnEnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEnd.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnEnd.Location = new System.Drawing.Point(778, 538);
-            this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(64, 20);
-            this.btnEnd.TabIndex = 33;
-            this.btnEnd.Text = "退出程序";
-            this.btnEnd.UseVisualStyleBackColor = true;
-            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
-            // 
             // btnHelp
             // 
             this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHelp.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnHelp.Location = new System.Drawing.Point(708, 538);
+            this.btnHelp.Location = new System.Drawing.Point(773, 538);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(64, 20);
             this.btnHelp.TabIndex = 32;
@@ -617,7 +603,7 @@
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClear.Location = new System.Drawing.Point(638, 538);
+            this.btnClear.Location = new System.Drawing.Point(450, 538);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(64, 20);
             this.btnClear.TabIndex = 34;
@@ -818,7 +804,7 @@
             this.picReceiveFont.BackColor = System.Drawing.SystemColors.Control;
             this.picReceiveFont.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReceiveFont.Image = ((System.Drawing.Image)(resources.GetObject("picReceiveFont.Image")));
-            this.picReceiveFont.Location = new System.Drawing.Point(624, 2);
+            this.picReceiveFont.Location = new System.Drawing.Point(749, 540);
             this.picReceiveFont.Name = "picReceiveFont";
             this.picReceiveFont.Size = new System.Drawing.Size(18, 18);
             this.picReceiveFont.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -834,7 +820,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtReceive.Location = new System.Drawing.Point(6, 23);
+            this.txtReceive.Location = new System.Drawing.Point(6, 21);
             this.txtReceive.MaxLength = 1048576;
             this.txtReceive.Name = "txtReceive";
             this.txtReceive.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -866,7 +852,7 @@
             this.picReloadConfig.BackColor = System.Drawing.SystemColors.Control;
             this.picReloadConfig.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReloadConfig.Image = ((System.Drawing.Image)(resources.GetObject("picReloadConfig.Image")));
-            this.picReloadConfig.Location = new System.Drawing.Point(648, 2);
+            this.picReloadConfig.Location = new System.Drawing.Point(638, 2);
             this.picReloadConfig.Name = "picReloadConfig";
             this.picReloadConfig.Size = new System.Drawing.Size(18, 18);
             this.picReloadConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -940,7 +926,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.cbCharacterEncoding);
             this.splitContainer1.Panel1.Controls.Add(this.picSetFont);
             this.splitContainer1.Panel1.Controls.Add(this.picReloadConfig);
-            this.splitContainer1.Panel1.Controls.Add(this.picReceiveFont);
             this.splitContainer1.Panel1.Controls.Add(this.labClearReceive);
             this.splitContainer1.Panel1.Controls.Add(this.Label8);
             this.splitContainer1.Panel1.Controls.Add(this.txtReceive);
@@ -1062,7 +1047,7 @@
             // labClearReceive
             // 
             this.labClearReceive.AutoSize = true;
-            this.labClearReceive.Location = new System.Drawing.Point(57, 5);
+            this.labClearReceive.Location = new System.Drawing.Point(57, 3);
             this.labClearReceive.Name = "labClearReceive";
             this.labClearReceive.Size = new System.Drawing.Size(77, 12);
             this.labClearReceive.TabIndex = 34;
@@ -1087,7 +1072,7 @@
             // 
             this.lnkSaveData.AutoSize = true;
             this.lnkSaveData.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lnkSaveData.Location = new System.Drawing.Point(144, 5);
+            this.lnkSaveData.Location = new System.Drawing.Point(141, 3);
             this.lnkSaveData.Name = "lnkSaveData";
             this.lnkSaveData.Size = new System.Drawing.Size(53, 12);
             this.lnkSaveData.TabIndex = 33;
@@ -1141,7 +1126,7 @@
             // labClearSend
             // 
             this.labClearSend.AutoSize = true;
-            this.labClearSend.Location = new System.Drawing.Point(56, 2);
+            this.labClearSend.Location = new System.Drawing.Point(49, 2);
             this.labClearSend.Name = "labClearSend";
             this.labClearSend.Size = new System.Drawing.Size(77, 12);
             this.labClearSend.TabIndex = 35;
@@ -1164,7 +1149,7 @@
             // 
             this.lnkOpen.AutoSize = true;
             this.lnkOpen.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lnkOpen.Location = new System.Drawing.Point(147, 2);
+            this.lnkOpen.Location = new System.Drawing.Point(128, 2);
             this.lnkOpen.Name = "lnkOpen";
             this.lnkOpen.Size = new System.Drawing.Size(53, 12);
             this.lnkOpen.TabIndex = 34;
@@ -1180,8 +1165,8 @@
             this.Controls.Add(this.groupSend);
             this.Controls.Add(this.picTop);
             this.Controls.Add(this.labIsSerialOpen);
+            this.Controls.Add(this.picReceiveFont);
             this.Controls.Add(this.labTx);
-            this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupReceive);
             this.Controls.Add(this.labRx);
@@ -1243,7 +1228,6 @@
         internal System.Windows.Forms.Label labTx;
         internal System.Windows.Forms.Label labIsSerialOpen;
         internal System.Windows.Forms.Label labRx;
-        internal System.Windows.Forms.Button btnEnd;
         internal System.Windows.Forms.Button btnHelp;
         internal System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.CheckBox chkShowReceive;
